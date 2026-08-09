@@ -401,6 +401,7 @@
                     <p style="color:#555;">{{ upcoming_drive.message }}</p>
                 </div>
                 <p><strong>Status:</strong> {{ drive_eligibility.reason }}</p>
+<<<<<<< HEAD
                 {% if drive_eligibility.requires_permission %}
                     <p style="margin-top:10px;color:#e96810;">You need coordinator permission to attend the next drive.</p>
                 {% endif %}
@@ -428,6 +429,38 @@
                         </select>
                     </div>
                     <div style="margin-bottom:10px;">
+=======
+                {% if drive_eligibility.decision == 'placed' %}
+                    <p style="margin-top:10px;color:#28a745;">You have already been placed and are not eligible for further placement drives.</p>
+                {% else %}
+                    {% if drive_eligibility.requires_permission %}
+                        <p style="margin-top:10px;color:#e96810;">You need coordinator permission to attend the next drive.</p>
+                    {% endif %}
+                    <form action="{{ url_for('student_drive_update') }}" method="post" style="margin-top:16px;">
+                        <input type="hidden" name="drive_name" value="{{ upcoming_drive.name }}">
+                        <div style="margin-bottom:10px;">
+                            <label>Did you attend the previous drive?</label><br>
+                            <select name="attendance" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom:10px;">
+                            <label>Did you submit feedback?</label><br>
+                            <select name="feedback_submitted" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom:10px;">
+                            <label>Placement status</label><br>
+                            <select name="placement_status" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                                <option value="not_placed">Not Placed</option>
+                                <option value="placed">Placed</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom:10px;">
+>>>>>>> b993e77a0a14b8669f178d6cd8d4122ba4e44b3a
                         <label>Permission reason (optional)</label><br>
                         <textarea name="permission_reason" rows="3" style="width:100%;margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;"></textarea>
                     </div>
