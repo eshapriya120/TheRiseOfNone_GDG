@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | PlacementHub</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 70px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff7518;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #ff7518;
+        }
+
+        .logout {
+            background: #ff7518;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+
+        /* MAIN */
+
+        .main {
+            padding: 45px 7%;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #777;
+            font-size: 15px;
+        }
+
+
+        /* STAT CARDS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card h2 {
+            color: #ff7518;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* MAIN GRID */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+
+        /* LEARNING PATH */
+
+        .learning-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            margin-bottom: 12px;
+            background: #fafafa;
+            border-radius: 7px;
+            border: 1px solid #eee;
+        }
+
+        .learning-icon {
+            width: 42px;
+            height: 42px;
+            background: #fff0e6;
+            color: #ff7518;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 19px;
+            margin-right: 15px;
+        }
+
+        .learning-item h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .learning-item p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .start-btn {
+            margin-left: auto;
+            text-decoration: none;
+            color: #ff7518;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* PROGRESS */
+
+        .skill {
+            margin-bottom: 22px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #ff7518;
+            border-radius: 10px;
+        }
+
+
+        /* PLACEMENT */
+
+        .placement-section {
+            margin-top: 25px;
+        }
+
+        .company {
+            padding: 17px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .company:last-child {
+            border-bottom: none;
+        }
+
+        .company h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .company p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            margin-top: 7px;
+            color: #ff7518;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 0 4%;
+            }
+
+            .main {
+                padding: 30px 4%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlacementHub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">
+                Dashboard
+            </a>
+
+            <a href="#learning">
+                Learning Path
+            </a>
+
+            <a href="#placements">
+                Placements
+            </a>
+
+            <a href="#">
+                Profile
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <h1>
+                Welcome back, {{ student.full_name }} 👋
+            </h1>
+
+            <p>
+                Department: {{ student.department }} | Teacher: {{ student.teacher }}
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h2>{{ stats.readiness }}%</h2>
+
+                <p>
+                    Placement Readiness
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>{{ stats.skills_completed }}</h2>
+
+                <p>
+                    Skills Completed
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>{{ stats.tests_completed }}</h2>
+
+                <p>
+                    Tests Completed
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>{{ stats.eligible_drives }}</h2>
+
+                <p>
+                    Eligible Drives
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LEARNING + PROGRESS -->
+
+        <div class="content-grid">
+
+            <div class="section" id="drives">
+                <h2>Next Drive Eligibility</h2>
+                <div style="background:#fafafa;padding:16px;border-radius:8px;border:1px solid #eee;margin-bottom:14px;">
+                    <h3 style="margin-bottom:6px;">{{ upcoming_drive.name }}</h3>
+                    <p style="color:#555;">{{ upcoming_drive.message }}</p>
+                </div>
+                <p><strong>Status:</strong> {{ drive_eligibility.reason }}</p>
+                {% if drive_eligibility.requires_permission %}
+                    <p style="margin-top:10px;color:#e96810;">You need coordinator permission to attend the next drive.</p>
+                {% endif %}
+                <form action="{{ url_for('student_drive_update') }}" method="post" style="margin-top:16px;">
+                    <input type="hidden" name="drive_name" value="{{ upcoming_drive.name }}">
+                    <div style="margin-bottom:10px;">
+                        <label>Did you attend the previous drive?</label><br>
+                        <select name="attendance" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <label>Did you submit feedback?</label><br>
+                        <select name="feedback_submitted" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <label>Placement status</label><br>
+                        <select name="placement_status" style="margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;">
+                            <option value="not_placed">Not Placed</option>
+                            <option value="placed">Placed</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <label>Permission reason (optional)</label><br>
+                        <textarea name="permission_reason" rows="3" style="width:100%;margin-top:6px;padding:8px;border:1px solid #ddd;border-radius:6px;"></textarea>
+                    </div>
+                    <label><input type="checkbox" name="permission_requested" value="on"> Request coordinator permission</label>
+                    <div style="margin-top:12px;"><button type="submit" style="background:#ff7518;color:white;border:none;padding:10px 14px;border-radius:6px;cursor:pointer;">Save Drive Status</button></div>
+                </form>
+            </div>
+
+            <!-- LEARNING PATH -->
+
+            <div class="section" id="learning">
+
+                <h2>
+                    Your Learning Path
+                </h2>
+
+
+                <div class="learning-item">
+
+                    <div class="learning-icon">
+                        💻
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Programming Fundamentals
+                        </h3>
+
+                        <p>
+                            C, Java, Python and problem solving
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="start-btn">
+                        Start →
+                    </a>
+
+                </div>
+
+
+                <div class="learning-item">
+
+                    <div class="learning-icon">
+                        🧩
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Data Structures & Algorithms
+                        </h3>
+
+                        <p>
+                            Arrays, strings, linked lists and algorithms
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="start-btn">
+                        Continue →
+                    </a>
+
+                </div>
+
+
+                <div class="learning-item">
+
+                    <div class="learning-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Aptitude & Reasoning
+                        </h3>
+
+                        <p>
+                            Quantitative, logical and verbal reasoning
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="start-btn">
+                        Practice →
+                    </a>
+
+                </div>
+
+
+                <div class="learning-item">
+
+                    <div class="learning-icon">
+                        🎤
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Interview Preparation
+                        </h3>
+
+                        <p>
+                            Technical and HR interview preparation
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="start-btn">
+                        Prepare →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="section">
+
+                <h2>
+                    My Progress
+                </h2>
+
+
+                    {% for item in progress_items %}
+                <div class="skill">
+
+                    <div class="skill-header">
+
+                        <span>
+                            {{ item.label }}
+                        </span>
+
+                        <span>
+                            {{ item.value }}%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-bar"
+                             style="width: {{ item.value }}%;">
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- PLACEMENTS -->
+
+        <div class="section placement-section"
+             id="placements">
+
+            <h2>
+                Recommended Placement Opportunities
+            </h2>
+
+
+            <div class="company">
+
+                <h3>
+                    Google
+                </h3>
+
+                <p>
+                    Software Engineer
+                </p>
+
+                <p>
+                    Eligibility: CSE | 8.0+ CGPA
+                </p>
+
+                <a href="#" class="view-btn">
+                    View Opportunity →
+                </a>
+
+            </div>
+
+
+            <div class="company">
+
+                <h3>
+                    Infosys
+                </h3>
+
+                <p>
+                    Graduate Engineer Trainee
+                </p>
+
+                <p>
+                    Eligibility: CSE / IT
+                </p>
+
+                <a href="#" class="view-btn">
+                    View Opportunity →
+                </a>
+
+            </div>
+
+
+            <div class="company">
+
+                <h3>
+                    TCS
+                </h3>
+
+                <p>
+                    Software Developer
+                </p>
+
+                <p>
+                    Eligibility: CSE / IT | 7.5+ CGPA
+                </p>
+
+                <a href="#" class="view-btn">
+                    View Opportunity →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

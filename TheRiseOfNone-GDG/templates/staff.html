@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Staff Dashboard | PlacementHub</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 70px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff7518;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #ff7518;
+        }
+
+        .logout {
+            background: #ff7518;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+
+        /* MAIN */
+
+        .main {
+            padding: 45px 7%;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #777;
+        }
+
+
+        /* STATISTICS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card h2 {
+            color: #ff7518;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* SECTION */
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        /* TABLE */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        th {
+            background: #fafafa;
+            color: #555;
+        }
+
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .placed {
+            background: #e7f7ed;
+            color: #16834a;
+        }
+
+        .process {
+            background: #fff0e6;
+            color: #e96810;
+        }
+
+        .not-placed {
+            background: #eeeeee;
+            color: #666;
+        }
+
+
+        /* COMPANY / DRIVES */
+
+        .drives {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .drive {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 7px;
+        }
+
+        .drive h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .drive p {
+            color: #777;
+            font-size: 13px;
+            margin: 7px 0;
+        }
+
+        .manage-btn {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff7518;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* PLACEMENT SUMMARY */
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .summary-box {
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 7px;
+        }
+
+        .summary-box h3 {
+            color: #ff7518;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .summary-box p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .drives {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 0 4%;
+            }
+
+            .main {
+                padding: 30px 4%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PlacementHub
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#">
+                Dashboard
+            </a>
+
+            <a href="#students">
+                Students
+            </a>
+
+            <a href="#companies">
+                Companies
+            </a>
+
+            <a href="#drives">
+                Placement Drives
+            </a>
+
+            <a href="{{ url_for('analysis') }}">
+                AI Analysis
+            </a>
+
+            <a href="{{ url_for('tableau_dashboard') }}">
+                Data Analytics
+            </a>
+
+            <a href="{{ url_for('logout') }}" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <h1>
+                Welcome, {{ staff.name }} 👋
+            </h1>
+
+            <p>
+                {{ department_label }} placement dashboard.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h2>
+                    {{ summary.total_students }}
+                </h2>
+
+                <p>
+                    Total Students
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>
+                    {{ summary.placed }}
+                </h2>
+
+                <p>
+                    Students Placed
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>
+                    {{ summary.in_process }}
+                </h2>
+
+                <p>
+                    In Process
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h2>
+                    {{ summary.placement_rate }}%
+                </h2>
+
+                <p>
+                    Placement Rate
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUDENT DETAILS -->
+
+        <div class="section"
+             id="students">
+
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <h2>
+                        Student Placement Overview
+                    </h2>
+                    <p>
+                        Showing data for {{ department_label }}.
+                    </p>
+                </div>
+                <a href="{{ export_url }}" class="manage-btn" style="padding: 12px 18px; background: #ff7518; color: white; border-radius: 6px;">
+                    Export CSV
+                </a>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student Name
+                            </th>
+
+                            <th>
+                                Register No
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                CGPA
+                            </th>
+
+                            <th>
+                                Applications
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for student in students %}
+                        <tr>
+                            <td>{{ student.full_name }}</td>
+                            <td>{{ student.register_no }}</td>
+                            <td>{{ student.department }}</td>
+                            <td>{{ student.cgpa }}</td>
+                            <td>{{ student.applications }}</td>
+                            <td>
+                                {% if student.status == 'Placed' %}
+                                <span class="status placed">Placed</span>
+                                {% elif student.status == 'In Process' %}
+                                <span class="status process">In Process</span>
+                                {% else %}
+                                <span class="status not-placed">Not Placed</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLACEMENT SUMMARY -->
+
+        <div class="section">
+
+            <h2>
+                Placement Summary
+            </h2>
+
+
+            <div class="summary">
+
+
+                <div class="summary-box">
+
+                    <h3>
+                        {{ summary.department_rates.CSE }}%
+                    </h3>
+
+                    <p>
+                        CSE Placement Rate
+                    </p>
+
+                </div>
+
+
+                <div class="summary-box">
+
+                    <h3>
+                        {{ summary.department_rates.IT }}%
+                    </h3>
+
+                    <p>
+                        IT Placement Rate
+                    </p>
+
+                </div>
+
+
+                <div class="summary-box">
+
+                    <h3>
+                        {{ summary.department_rates.EEE }}%
+                    </h3>
+
+                    <p>
+                        EEE Placement Rate
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% if is_coordinator %}
+        <div class="section" id="feedback-upload">
+
+            <h2>
+                Student Feedback Upload
+            </h2>
+
+            <p>
+                Upload a CSV file from the student feedback form. New rows will be appended to the consolidated feedback store.
+            </p>
+
+            <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+                <form action="{{ url_for('upload_feedback') }}" method="post" enctype="multipart/form-data" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                    <input type="file" name="feedback_file" accept=".csv" style="padding: 8px; border: 1px solid #ddd; border-radius: 6px;" required>
+                    <button type="submit" class="manage-btn" style="padding: 12px 18px; background: #ff7518; color: white; border-radius: 6px; border: none; cursor: pointer;">Upload Feedback CSV</button>
+                </form>
+                <span style="font-size: 14px; color: #555;">
+                    Consolidated feedback submissions: <strong>{{ feedback_count }}</strong>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="section" id="performance-upload">
+
+            <h2>
+                Student Performance Metrics Upload
+            </h2>
+
+            <p>
+                Upload a CSV of student performance metrics to enrich the AI analysis and planning recommendations.
+            </p>
+
+            <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+                <form action="{{ url_for('upload_performance') }}" method="post" enctype="multipart/form-data" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                    <input type="file" name="performance_file" accept=".csv" style="padding: 8px; border: 1px solid #ddd; border-radius: 6px;" required>
+                    <button type="submit" class="manage-btn" style="padding: 12px 18px; background: #ff7518; color: white; border-radius: 6px; border: none; cursor: pointer;">Upload Performance CSV</button>
+                </form>
+                <span style="font-size: 14px; color: #555;">
+                    Performance metrics rows: <strong>{{ performance_count }}</strong>
+                </span>
+            </div>
+
+        </div>
+        {% endif %}
+
+        {% if is_coordinator %}
+        <div class="section">
+            <h2>Drive Eligibility Requests</h2>
+            <p>Coordinator can review student requests and grant or deny access to the next drive.</p>
+            <div class="table-container" style="margin-top:16px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Drive</th>
+                            <th>Attendance</th>
+                            <th>Feedback</th>
+                            <th>Placement</th>
+                            <th>Reason</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in drive_state_rows %}
+                        <tr>
+                            <td>{{ row.student_username }}</td>
+                            <td>{{ row.drive_name }}</td>
+                            <td>{{ row.attendance }}</td>
+                            <td>{{ row.feedback_submitted }}</td>
+                            <td>{{ row.placement_status }}</td>
+                            <td>{{ row.permission_reason }}</td>
+                            <td>
+                                <form action="{{ url_for('coordinator_drive_action') }}" method="post" style="display:flex;gap:8px;flex-wrap:wrap;">
+                                    <input type="hidden" name="student_username" value="{{ row.student_username }}">
+                                    <button type="submit" name="action" value="grant" style="background:#16834a;color:white;border:none;padding:8px 10px;border-radius:6px;cursor:pointer;">Grant</button>
+                                    <button type="submit" name="action" value="deny" style="background:#e96810;color:white;border:none;padding:8px 10px;border-radius:6px;cursor:pointer;">Deny</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- COMPANIES / DRIVES -->
+
+        <div class="section"
+             id="companies">
+
+            <h2>
+                Upcoming Placement Drives
+            </h2>
+
+
+            <div class="drives">
+
+
+                <div class="drive">
+
+                    <h3>
+                        Google
+                    </h3>
+
+                    <p>
+                        Role: Software Engineer
+                    </p>
+
+                    <p>
+                        Package: ₹25 LPA
+                    </p>
+
+                    <p>
+                        Eligible Students: 84
+                    </p>
+
+                    <p>
+                        Drive Date: 18 Aug 2026
+                    </p>
+
+                    <a href="#"
+                       class="manage-btn">
+                        Manage Drive →
+                    </a>
+
+                </div>
+
+
+                <div class="drive">
+
+                    <h3>
+                        Infosys
+                    </h3>
+
+                    <p>
+                        Role: Graduate Engineer Trainee
+                    </p>
+
+                    <p>
+                        Package: ₹8 LPA
+                    </p>
+
+                    <p>
+                        Eligible Students: 126
+                    </p>
+
+                    <p>
+                        Drive Date: 22 Aug 2026
+                    </p>
+
+                    <a href="#"
+                       class="manage-btn">
+                        Manage Drive →
+                    </a>
+
+                </div>
+
+
+                <div class="drive">
+
+                    <h3>
+                        TCS
+                    </h3>
+
+                    <p>
+                        Role: Software Developer
+                    </p>
+
+                    <p>
+                        Package: ₹7 LPA
+                    </p>
+
+                    <p>
+                        Eligible Students: 98
+                    </p>
+
+                    <p>
+                        Drive Date: 28 Aug 2026
+                    </p>
+
+                    <a href="#"
+                       class="manage-btn">
+                        Manage Drive →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

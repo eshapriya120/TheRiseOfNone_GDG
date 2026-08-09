@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analysis | PlacementHub</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #222; }
+        .navbar { height: 70px; background: white; display: flex; align-items: center; justify-content: space-between; padding: 0 7%; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+        .logo { font-size: 24px; font-weight: bold; color: #ff7518; }
+        .nav-links { display: flex; align-items: center; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 14px; }
+        .nav-links a:hover { color: #ff7518; }
+        .logout { background: #ff7518; color: white !important; padding: 10px 18px; border-radius: 5px; }
+        .main { padding: 45px 7%; }
+        .section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 3px 15px rgba(0,0,0,.05); }
+        .section h2 { font-size: 22px; margin-bottom: 18px; }
+        .summary-card { background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px; }
+        .summary-card h3 { margin: 0 0 10px; font-size: 18px; color: #ff7518; }
+        .summary-card p { margin: 0; color: #555; line-height: 1.6; }
+        .badge { display: inline-block; padding: 8px 12px; border-radius: 999px; background: #fff0e6; color: #e96810; font-size: 13px; margin-right: 8px; margin-bottom: 8px; }
+        .list { margin: 0; padding-left: 20px; }
+        .list li { margin-bottom: 10px; color: #555; }
+        .snippet { background: #f9f9f9; padding: 16px; border-radius: 8px; border: 1px solid #eee; margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PlacementHub</div>
+        <div class="nav-links">
+            <a href="{{ url_for('staff') }}">Dashboard</a>
+            <a href="{{ url_for('analysis') }}">AI Analysis</a>
+            <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="section">
+            <h2>AI Analysis & Student Planner</h2>
+            <p>{{ ai_summary }}</p>
+        </div>
+        <div class="section">
+            <h2>Planner Insights</h2>
+            <div class="summary-card">
+                <h3>Action Plan</h3>
+                <ul class="list">
+                    {% for item in analysis.planner %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="summary-card">
+                <h3>Recommendations</h3>
+                <ul class="list">
+                    {% for item in analysis.recommendations %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Feedback Distribution</h2>
+            <div>
+                <strong>Departments</strong>
+                {% for dept, count in analysis.department_counts %}
+                    <span class="badge">{{ dept }}: {{ count }}</span>
+                {% endfor %}
+            </div>
+            <div style="margin-top: 16px;">
+                <strong>Categories</strong>
+                {% for category, count in analysis.category_counts %}
+                    <span class="badge">{{ category }}: {{ count }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="section">
+            <h2>Recent Feedback Snippets</h2>
+            {% if analysis.top_snippets %}
+                {% for snippet in analysis.top_snippets %}
+                    <div class="snippet">{{ snippet }}</div>
+                {% endfor %}
+            {% else %}
+                <p>No snippets available yet. Upload a feedback CSV and refresh.</p>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
