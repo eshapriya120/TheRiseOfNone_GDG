@@ -219,12 +219,13 @@ def evaluate_drive_eligibility(student, previous_state):
     feedback = (previous_state.get("feedback_submitted") or "").strip().lower()
     previous_placement = (previous_state.get("placement_status") or "").strip().lower()
 
-    if attendance == "yes" and feedback == "yes" and previous_placement != "placed":
+    if previous_placement == "placed":
+        return {"eligible": False, "decision": "placed", "requires_permission": False, "reason": "Student is already placed."}
+
+    if attendance == "yes" and feedback == "yes":
         return {"eligible": True, "decision": "eligible", "requires_permission": False, "reason": "Previous attendance and feedback were completed."}
 
     if attendance == "no" or feedback == "no":
-        if previous_placement == "placed":
-            return {"eligible": False, "decision": "not_eligible_placed", "requires_permission": False, "reason": "Student is already placed."}
         return {"eligible": False, "decision": "permission_required", "requires_permission": True, "reason": "Attendance or feedback was incomplete; coordinator permission is required."}
 
     return {"eligible": False, "decision": "not_eligible", "requires_permission": False, "reason": "Previous drive state does not allow participation."}

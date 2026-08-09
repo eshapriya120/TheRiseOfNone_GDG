@@ -38,6 +38,18 @@ class DriveEligibilityTests(unittest.TestCase):
         self.assertTrue(result["eligible"])
         self.assertEqual(result["decision"], "eligible")
 
+    def test_completed_and_placed_is_not_eligible(self):
+        student = {"username": "cse_student4", "status": "In Process"}
+        previous = {
+            "student_username": "cse_student4",
+            "attendance": "yes",
+            "feedback_submitted": "yes",
+            "placement_status": "placed",
+        }
+        result = evaluate_drive_eligibility(student, previous)
+        self.assertFalse(result["eligible"])
+        self.assertEqual(result["decision"], "placed")
+
     def test_google_form_payload_is_processed(self):
         result = process_google_form_payload({
             "student_username": "cse_student1",
