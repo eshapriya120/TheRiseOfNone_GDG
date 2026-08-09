@@ -1,0 +1,56 @@
+student_name,student_id,department,company_name,round_name,rating,category,feedback
+Aarav Sharma,CSE21001,CSE,Zoho,Basic Programming & Aptitude,4,Technical Aptitude,Aptitude and problem-solving section had very clear logic puzzles. Time limit felt tight for handwritten syntax logic.
+Aarav Sharma,CSE21001,CSE,Zoho,Advanced Data Structures,5,Technical Depth,Interviewer provided dynamic feedback as edge cases were tested live. Needed a bit more time to optimize memory complexity.
+Aarav Sharma,CSE21001,CSE,Zoho,Application Development,4,Practical Assessment,Loved the hands-on approach of building a full CLI app module. Felt a bit rushed when implementing multi-user roles.
+Aarav Sharma,CSE21001,CSE,Zoho,General & Technical HR,5,Culture & Communication,Interviewer was exceptionally welcoming and explained Zoho workplace culture well.
+Priya Patel,IT21001,IT,Zoho,Basic Programming & Aptitude,5,Technical Aptitude,Great coding platform experience and very clear instructions provided before starting.
+Priya Patel,IT21001,IT,Zoho,Advanced Data Structures,4,Technical Depth,Strong focus on graph traversal algorithms and dynamic programming trade-offs.
+Priya Patel,IT21001,IT,Zoho,Application Development,5,Practical Assessment,Built a smooth inventory management CLI script. Great guidance from the mentor during edge testing.
+Priya Patel,IT21001,IT,Zoho,General & Technical HR,5,Culture & Communication,Very comfortable conversation about career growth and rotational opportunities.
+Rohan Verma,ECE21001,ECE,Zoho,Basic Programming & Aptitude,3,Technical Aptitude,Section was heavy on core C pointer arithmetic which took extra time to debug.
+Rohan Verma,ECE21001,ECE,Zoho,Advanced Data Structures,4,Technical Depth,Interviewer was encouraging and guided me well through binary tree balancing logic.
+Rohan Verma,ECE21001,ECE,Zoho,Application Development,3,Practical Assessment,Time management was tricky during the file I/O implementation step.
+Rohan Verma,ECE21001,ECE,Zoho,General & Technical HR,4,Culture & Communication,Good discussion on relocation preferences and onboarding timeline.
+Ananya Roy,CSE21002,CSE,TechCorp Solutions,Technical Screening,4,Technical Aptitude,The coding environment was smooth and interviewer gave subtle hints when stuck.
+Ananya Roy,CSE21002,CSE,TechCorp Solutions,System Design Architecture,3,System Architecture,In-depth discussion on database indexing and caching strategies. Felt rushed during high-availability trade-offs.
+Ananya Roy,CSE21002,CSE,TechCorp Solutions,Behavioral & Leadership,5,Culture & Communication,Interviewer was warm and provided clear expectations. Great culture reflected in this round.
+Vikram Singh,EEE21001,EEE,TechCorp Solutions,Technical Screening,5,Technical Aptitude,Coding round had practical array manipulation tasks that were straightforward to write.
+Vikram Singh,EEE21001,EEE,TechCorp Solutions,System Design Architecture,4,System Architecture,Focused on microservices decoupling and event-driven architectures using Kafka.
+Vikram Singh,EEE21001,EEE,TechCorp Solutions,Behavioral & Leadership,4,Culture & Communication,Good STAR scenario discussions regarding team conflict resolution.
+Neha Gupta,IT21002,IT,TechCorp Solutions,Technical Screening,3,Technical Aptitude,Platform had minor latency during live submission execution.
+Neha Gupta,IT21002,IT,TechCorp Solutions,System Design Architecture,4,System Architecture,Solid conversation on horizontal scaling versus vertical scaling trade-offs.
+Neha Gupta,IT21002,IT,TechCorp Solutions,Behavioral & Leadership,5,Culture & Communication,Very friendly conversation focused on ownership and adaptability.
+Rahul Nair,MECH21001,MECH,DataWave Inc,Python & SQL Practical,5,Technical Aptitude,Very realistic data challenges related to actual business query problems.
+Rahul Nair,MECH21001,MECH,DataWave Inc,Data Architecture & Modeling,4,System Architecture,Great back-and-forth discussion on snowflake schema design trade-offs.
+Rahul Nair,MECH21001,MECH,DataWave Inc,HM Team Alignment,5,Culture & Communication,Manager gave great insights into team roadmap and technical goals.
+Sanya Iyer,CSE21003,CSE,DataWave Inc,Python & SQL Practical,4,Technical Aptitude,Complex SQL joins and CTE queries tested real analytical thinking.
+Sanya Iyer,CSE21003,CSE,DataWave Inc,Data Architecture & Modeling,3,System Architecture,Felt a little constrained by time on the dynamic schema drawing tool.
+Sanya Iyer,CSE21003,CSE,DataWave Inc,HM Team Alignment,5,Culture & Communication,Extremely encouraging discussion on learning curves and mentorship options.
+Karan Rao,ECE21002,ECE,CloudScale Systems,Linux & Scripting,4,Technical Aptitude,Good practical focus on real Linux process debugging scenarios.
+Karan Rao,ECE21002,ECE,CloudScale Systems,Cloud & Infrastructure,2,Technical Depth,Interviewer had deep knowledge of Kubernetes but was quite aggressive during trade-off discussions.
+Karan Rao,ECE21002,ECE,CloudScale Systems,Cultural & HR Fit,4,Culture & Communication,HR representative was very supportive and clarified policy details clearly.
+Pooja Reddy,IT21003,IT,CloudScale Systems,Linux & Scripting,5,Technical Aptitude,Hands-on shell scripting task was relevant and well evaluated.
+Pooja Reddy,IT21003,IT,CloudScale Systems,Cloud & Infrastructure,4,Technical Depth,Detailed discussion on AWS VPC networking and security group rules.
+Pooja Reddy,IT21003,IT,CloudScale Systems,Cultural & HR Fit,5,Culture & Communication,Positive discussion regarding remote work guidelines and learning budgets.
+Arjun Joshi,CSE21004,CSE,Apex Innovations,JavaScript & UI Engineering,5,Technical Aptitude,React hooks and state management discussion went very smoothly.
+Arjun Joshi,CSE21004,CSE,Apex Innovations,UI Architecture & Standards,4,System Architecture,Micro-frontend design and accessibility standards discussed in detail.
+Arjun Joshi,CSE21004,CSE,Apex Innovations,Engineering HR,5,Culture & Communication,Very smooth feedback loop and clear next-step communication.
+Meera Kapoor,EEE21002,EEE,Apex Innovations,JavaScript & UI Engineering,4,Technical Aptitude,Interactive DOM manipulation exercises were challenging but fair.
+Meera Kapoor,EEE21002,EEE,Apex Innovations,UI Architecture & Standards,3,System Architecture,Felt a little constrained by time on the CSS layout component challenge.
+Meera Kapoor,EEE21002,EEE,Apex Innovations,Engineering HR,4,Culture & Communication,Engaging conversation on team structure and project deadlines.
+Aditya Mehta,MECH21002,MECH,Zoho,Basic Programming & Aptitude,4,Technical Aptitude,Logic puzzles were engaging; code syntax verification was rigorous.
+Aditya Mehta,MECH21002,MECH,Zoho,Advanced Data Structures,3,Technical Depth,Matrix manipulation problems required high spatial logic optimization.
+Aditya Mehta,MECH21002,MECH,Zoho,Application Development,4,Practical Assessment,Good hands-on evaluation of real-time application building skills.
+Aditya Mehta,MECH21002,MECH,Zoho,General & Technical HR,5,Culture & Communication,Warm interaction showcasing Zoho product suite vision.
+Kavya Deshmukh,CSE21005,CSE,TechCorp Solutions,Technical Screening,5,Technical Aptitude,Excellent coding interface; algorithms questions were crisp and clear.
+Kavya Deshmukh,CSE21005,CSE,TechCorp Solutions,System Design Architecture,4,System Architecture,Detailed evaluation of load balancing strategies and cache invalidation.
+Kavya Deshmukh,CSE21005,CSE,TechCorp Solutions,Behavioral & Leadership,5,Culture & Communication,Extremely clear feedback given on role expectations and growth.
+Siddharth Choudhury,IT21004,IT,DataWave Inc,Python & SQL Practical,4,Technical Aptitude,Solid practical focus on Pandas dataframe manipulation and window functions.
+Siddharth Choudhury,IT21004,IT,DataWave Inc,Data Architecture & Modeling,5,System Architecture,Deep dive into ETL pipeline fault tolerance and data lineage tracking.
+Siddharth Choudhury,IT21004,IT,DataWave Inc,HM Team Alignment,4,Culture & Communication,Manager explained operational metrics and daily workflow clearly.
+Divya Pillai,ECE21003,ECE,CloudScale Systems,Linux & Scripting,4,Technical Aptitude,Effective assessment on systemd service setup and bash loop constructs.
+Divya Pillai,ECE21003,ECE,CloudScale Systems,Cloud & Infrastructure,3,Technical Depth,Terraform state lock management questions were very nuanced.
+Divya Pillai,ECE21003,ECE,CloudScale Systems,Cultural & HR Fit,5,Culture & Communication,Transparent review of shift requirements and team values.
+Varun Sharma,CSE21006,CSE,Apex Innovations,JavaScript & UI Engineering,5,Technical Aptitude,Great discussion on async state handling and web worker performance.
+Varun Sharma,CSE21006,CSE,Apex Innovations,UI Architecture & Standards,4,System Architecture,Solid conversation on design tokens and component library scaling.
+Varun Sharma,CSE21006,CSE,Apex Innovations,Engineering HR,5,Culture & Communication,Prompt response times and respectful interview atmosphere.

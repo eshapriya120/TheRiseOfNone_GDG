@@ -1,0 +1,73 @@
+username,full_name,register_no,department,teacher,cgpa,applications,status,programming,dsa,aptitude,communication
+cse_student1,Riya Patel,CSE21001,CSE,Rahul Gupta,8.5,4,Placed,85,90,78,72
+cse_student2,Arjun Singh,CSE21002,CSE,Rahul Gupta,7.9,3,In Process,72,68,65,70
+cse_student3,Meera Sharma,CSE21003,CSE,Rahul Gupta,7.2,5,Not Placed,60,55,62,58
+it_student1,Aman Verma,IT21001,IT,Nidhi Mehta,8.0,4,Placed,82,76,74,68
+it_student2,Swathi Rao,IT21002,IT,Nidhi Mehta,7.4,3,In Process,70,62,68,66
+eee_student1,Nikhil Kumar,EEE21001,EEE,Manish Roy,7.6,4,In Process,75,60,66,65
+riyapatel,Riya Patel,cse101,CSE,Rahul Gupta,7.0,2,Not Placed,60,55,58,60
+arjunsingh,Arjun Singh,cse102,CSE,Rahul Gupta,7.2,3,Placed,63,59,60,65
+meerasharma,Meera Sharma,cse103,CSE,Rahul Gupta,7.4,4,In Process,66,63,62,70
+amanverma,Aman Verma,it101,IT,Nidhi Mehta,7.6,5,Not Placed,69,67,64,75
+swathirao,Swathi Rao,it102,IT,Nidhi Mehta,7.8,2,Placed,72,71,66,60
+nikhilkumar,Nikhil Kumar,eee101,EEE,Manish Roy,8.0,3,In Process,75,75,68,65
+priyat,Priya T,71382302121,CSE,Rahul Gupta,7.8,4,Placed,65,65,58,70
+priyankas,Priyanka s,71382302122,CSE,Rahul Gupta,8.0,5,In Process,68,69,60,75
+ragulab,Ragul A B,71382302123,CSE,Rahul Gupta,7.0,2,Not Placed,71,73,62,60
+ragulm,Ragul M,71382302124,CSE,Rahul Gupta,7.2,3,Placed,74,77,64,65
+ragulr,Ragul R,71382302125,CSE,Rahul Gupta,7.4,4,In Process,77,81,66,70
+rahulsundark,Rahul Sundar K,71382302126,CSE,Rahul Gupta,7.6,5,Not Placed,80,55,68,75
+rahulsudhan,Rahul Sudhan,71382302127,CSE,Rahul Gupta,7.8,2,Placed,83,59,70,60
+rajkumarn,Raj kumar N,71382302128,CSE,Rahul Gupta,8.0,3,In Process,61,63,72,65
+rampremkumarn,Ram Prem Kumar N,71382302129,CSE,Rahul Gupta,7.0,4,Not Placed,64,67,74,70
+ramyasriks,Ramya Sri K.S,71382302130,CSE,Rahul Gupta,7.2,5,Placed,67,71,76,75
+ranjitkumarm,Ranjit Kumar M,71382302131,CSE,Rahul Gupta,7.4,2,In Process,70,75,58,60
+raseetha,Raseetha,71382302132,CSE,Rahul Gupta,7.6,3,Not Placed,73,79,60,65
+rashvanthrv,Rashvanth R V,71382302133,CSE,Rahul Gupta,7.8,4,Placed,76,83,62,70
+ravichandran,Ravichandran,71382302134,CSE,Rahul Gupta,8.0,5,In Process,79,57,64,75
+rithikam,Rithika M,71382302135,CSE,Rahul Gupta,7.0,2,Not Placed,82,61,66,60
+roshinis,Roshini S,71382302136,CSE,Rahul Gupta,7.2,3,Placed,60,65,68,65
+sabarinatha,Sabarinath.A,71382302137,CSE,Rahul Gupta,7.4,4,In Process,63,69,70,70
+sajithlalguru,Sajith Lalguru,71382302138,CSE,Rahul Gupta,7.6,5,Not Placed,66,73,72,75
+rsandhiya,R.sandhiya,71382302139,CSE,Rahul Gupta,7.8,2,Placed,69,77,74,60
+sangavia,Sangavi A,71382302140,CSE,Rahul Gupta,8.0,3,In Process,72,81,76,65
+sanjanak,Sanjana K,71382302141,CSE,Rahul Gupta,7.0,4,Not Placed,75,55,58,70
+sasidharan,Sasidharan,71382302142,CSE,Rahul Gupta,7.2,5,Placed,78,59,60,75
+sathishb,Sathish B,71382302143,CSE,Rahul Gupta,7.4,2,In Process,81,63,62,60
+senthoorbalanbaskar,Senthoor Balan Baskar,71382302144,CSE,Rahul Gupta,7.6,3,Not Placed,84,67,64,65
+shanmugapriyat,Shanmugapriya T,71382302145,CSE,Rahul Gupta,7.8,4,Placed,62,71,66,70
+shibiramrs,Shibiram R S,71382302146,CSE,Rahul Gupta,8.0,5,In Process,65,75,68,75
+shreenidhin,Shreenidhi N,71382302147,CSE,Rahul Gupta,7.0,2,Not Placed,68,79,70,60
+shyamganeshs,Shyam Ganesh S,71382302148,CSE,Rahul Gupta,7.2,3,Placed,71,83,72,65
+sivabalanm,Sivabalan M,71382302149,CSE,Rahul Gupta,7.4,4,In Process,74,57,74,70
+sowmiyam,Sowmiya.M,71382302150,CSE,Rahul Gupta,7.6,5,Not Placed,77,61,76,75
+sriganthr,Sriganth.R,71382302151,CSE,Rahul Gupta,7.8,2,Placed,80,65,58,60
+srinaths,Srinath S,71382302152,CSE,Rahul Gupta,8.0,3,In Process,83,69,60,65
+srinivasank,Srinivasan K,71382302153,CSE,Rahul Gupta,7.0,4,Not Placed,61,73,62,70
+sriranjinis,Sriranjini S,71382302154,CSE,Rahul Gupta,7.2,5,Placed,64,77,64,75
+sudharshann,Sudharshan N,71382302155,CSE,Rahul Gupta,7.4,2,In Process,67,81,66,60
+sugapriyaa,Sugapriya A,71382302156,CSE,Rahul Gupta,7.6,3,Not Placed,70,55,68,65
+sumithrav,Sumithra V,71382302157,CSE,Rahul Gupta,7.8,4,Placed,73,59,70,70
+surendhars,Surendhar S,71382302158,CSE,Rahul Gupta,8.0,5,In Process,76,63,72,75
+sureshs,Suresh S,71382302159,CSE,Rahul Gupta,7.0,2,Not Placed,79,67,74,60
+suryaprakash,Suryaprakash,71382302160,CSE,Rahul Gupta,7.2,3,Placed,82,71,76,65
+sushmithadevis,Sushmitha Devi  S,71382302161,CSE,Rahul Gupta,7.4,4,In Process,60,75,58,70
+swethac,Swetha C,71382302162,CSE,Rahul Gupta,7.6,5,Not Placed,63,79,60,75
+swethasrip,Swetha Sri P,71382302163,CSE,Rahul Gupta,7.8,2,Placed,66,83,62,60
+swethavg,Swetha VG,71382302164,CSE,Rahul Gupta,8.0,3,In Process,69,57,64,65
+tharmaprajapathisri,Tharma Prajapathi Sri,71382302165,CSE,Rahul Gupta,7.0,4,Not Placed,72,61,66,70
+tharunm,Tharun M,71382302166,CSE,Rahul Gupta,7.2,5,Placed,75,65,68,75
+thenmozhim,Thenmozhi M,71382302167,CSE,Rahul Gupta,7.4,2,In Process,78,69,70,60
+thuraibalajik,Thurai Balaji K,71382302168,CSE,Rahul Gupta,7.6,3,Not Placed,81,73,72,65
+tushitas,Tushita S,71382302169,CSE,Rahul Gupta,7.8,4,Placed,84,77,74,70
+vaisnavis,Vaisnavi S,71382302170,CSE,Rahul Gupta,8.0,5,In Process,62,81,76,75
+vickramr,Vickram R,71382302171,CSE,Rahul Gupta,7.0,2,Not Placed,65,55,58,60
+vikassg,Vikas SG,71382302172,CSE,Rahul Gupta,7.2,3,Placed,68,59,60,65
+vikramr,Vikram R,71382302173,CSE,Rahul Gupta,7.4,4,In Process,71,63,62,70
+vimalap,Vimal AP,71382302174,CSE,Rahul Gupta,7.6,5,Not Placed,74,67,64,75
+vishalp,Vishal P,71382302175,CSE,Rahul Gupta,7.8,2,Placed,77,71,66,60
+vishruthar,Vishrutha R,71382302176,CSE,Rahul Gupta,8.0,3,In Process,80,75,68,65
+vishwa,Vishwa,71382302177,CSE,Rahul Gupta,7.0,4,Not Placed,83,79,70,70
+yuvansekarc,YuvanSekar C,71382302178,CSE,Rahul Gupta,7.2,5,Placed,61,83,72,75
+gowthamm,Gowtham M,71382302301,CSE,Rahul Gupta,7.4,2,In Process,64,57,74,60
+shrivatsana,Shri Vatsan A,71382302302,CSE,Rahul Gupta,7.6,3,Not Placed,67,61,76,65

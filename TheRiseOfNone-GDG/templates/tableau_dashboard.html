@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics | PlacementHub</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #222; }
+        .navbar { height: 70px; background: white; display: flex; align-items: center; justify-content: space-between; padding: 0 7%; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+        .logo { font-size: 24px; font-weight: bold; color: #ff7518; }
+        .nav-links { display: flex; align-items: center; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 14px; }
+        .nav-links a:hover { color: #ff7518; }
+        .logout { background: #ff7518; color: white !important; padding: 10px 18px; border-radius: 5px; }
+        .main { padding: 45px 7%; }
+        .section { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,.05); }
+        .section h2 { margin-bottom: 14px; font-size: 22px; }
+        .notice { margin-bottom: 24px; color: #555; line-height: 1.7; }
+        .embed-wrapper { width: 100%; min-height: 700px; border: 1px solid #e6e6e6; border-radius: 10px; overflow: hidden; }
+        .embed-placeholder { width: 100%; height: 600px; display: flex; align-items: center; justify-content: center; background: #fafafa; color: #555; font-size: 16px; }
+        .embed-placeholder a { color: #ff7518; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PlacementHub</div>
+        <div class="nav-links">
+            <a href="{{ url_for('staff') }}">Dashboard</a>
+            <a href="{{ url_for('analysis') }}">AI Analysis</a>
+            <a href="{{ url_for('tableau_dashboard') }}">Data Analytics</a>
+            <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="section">
+            <h2>Data Analytics Dashboard</h2>
+            <p class="notice">
+                This page embeds the configured analytics dashboard URL. Update the Tableau URL in secrets.toml if needed.
+            </p>
+            <p class="notice">
+                Key constraints:
+                1) Use a published Tableau URL that is accessible to the dashboard users.
+                2) If embedding with an iframe, ensure the Tableau server allows framing from this site.
+                3) Keep the Tableau URL configurable via the Flask app config or secrets file.
+                4) The Tableau view should align with the existing staff dashboard role and department access.
+            </p>
+            <div class="embed-wrapper">
+                <div class='tableauPlaceholder' id='viz1786248188138' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Th/TheRiseOfNone/Dashboard1/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='TheRiseOfNone/Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Th/TheRiseOfNone/Dashboard1/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1786248188138');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px'; } else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px'; } else { vizElement.style.width='100%';vizElement.style.height='1477px'; }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+    </main>
+</body>
+</html>
